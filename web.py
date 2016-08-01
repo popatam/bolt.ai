@@ -28,20 +28,12 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
         print(query_components)
         with open('index.html', 'rb') as fd:
             html = fd.read()
-        if 'text' in query_components:
-            print('text')
-#            print(query_components)
-#            a.talk(query_components['text'])
-            self.send_response(200)
-            self.send_header('Last-Modified', "")
-            self.send_header('Access-Control-Allow-Origin:', "*")
-            self.end_headers()
-        else:
-            self.send_header('Content-type', 'text/html')
-            self.send_response(200)
-            self.wfile.write(html)
-            self.send_header('Last-Modified', "")
-            self.end_headers()
+
+        self.send_header('Content-type', 'text/html')
+        self.send_response(200)
+        self.wfile.write(html)
+        self.send_header('Last-Modified', "")
+        self.end_headers()
 
 #        print(bash(command))
 
@@ -51,7 +43,6 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
         data = self.rfile.read(int(length))
         data = data.decode('utf-8')
         data = parse_qs(data, encoding='utf-8')
-        print(data)
 
         text = data['text'][0]
         if not 'method' in data.keys():
@@ -74,13 +65,10 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
                 speaker = None
                 emotion = None
 
-        print(text)
-        print(data)
         a.talk(text, method, speaker, emotion)
 
         self.send_header('Content-type', 'text/html')
-        self.send_response(404, 'nothing to do here')
-        self.send_header('Last-Modified', "")
+        self.send_response(200)
         self.end_headers()
 
 
