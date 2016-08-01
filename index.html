@@ -2,102 +2,150 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Semantic UI CDN</title>
+    <title>bolt.ai</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.js"></script>
+    <style> body {background-color: #839496} </style>
 </head>
 <body>
 
 
+<br>
+<div class="ui main text container">
 
-</head>
+    <div class="ui form" id="form">
+        <div class="ui grid">
+            <div class="twelve wide column">
+                <input type="text" name="text"/>
+                <!--input type="text" name="method" /-->
+                <br>
+            </div>
+            <div class="four wide column">
+                <div class="ui submit button">Submit</div>
+            </div>
+        </div>
+        <div class="ui grid">
+            <div class="one wide column">
+            </div>
+            <div class="five wide column">
+                <div class="grouped fields">
+                    <label>Чей голос:</label>
+                    <div class="field">
+                        <div id="yandex" class="ui slider checkbox yandex">
+                            <input type="radio" name="method" checked="checked" value="yandex"/>
+                            <label>Yandex</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui slider checkbox google">
+                            <input type="radio" name="method" value="google"/>
+                            <label>Google</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-<div class="ui form" id="form">
-    <input type="text" name="text"/>
-    <!--input type="text" name="method" /-->
-    <br>
-    <input type="radio" name="method" value="yandex"> yandex<Br>
-    <br>
+            <div class="five wide column">
+                <!-- выбор голоса -->
+                <div class="grouped fields speaker">
+                    <label for="speaker">Голос:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="speaker" value="jane" tabindex="0" class="hidden"/>
+                            <label>jane</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="speaker" value='oksana' tabindex="0" class="hidden"/>
+                            <label>oksana</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="speaker" value='alyss' tabindex="0" class="hidden"/>
+                            <label>alyss</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="speaker" value='omazh' tabindex="0" class="hidden"/>
+                            <label>omazh</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="speaker" value='zahar' tabindex="0" class="hidden"/>
+                            <label>zahar</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="speaker" value='ermil' tabindex="0" class="hidden"/>
+                            <label>ermil</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- выбор голоса /-->
 
-    <!-- выбор голоса -->
-    <div class="inline fields">
-        <label for="speaker">Голос:</label>
-        <div class="field">
-            <div class="ui radio checkbox">
-                <input type="radio" name="speaker" value="jane" tabindex="0" class="hidden"/>
-                <label>jane</label>
+            <div class="five wide column">
+                <div class="grouped fields emotion">
+                    <label for="emotion">Настроение:</label>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="emotion" value="good" tabindex="0" class="hidden"/>
+                            <label>good</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="emotion" value="neutral" tabindex="0" class="hidden"/>
+                            <label>neutral</label>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="ui radio checkbox">
+                            <input type="radio" name="emotion" value="evil" tabindex="0" class="hidden"/>
+                            <label>evil</label>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+
         </div>
-        <div class="field">
-            <div class="ui radio checkbox">
-                <input type="radio" name="speaker" value='oksana' tabindex="0" class="hidden"/>
-                <label>oksana</label>
-            </div>
-        </div>
-        <div class="field">
-            <div class="ui radio checkbox">
-                <input type="radio" name="speaker" value='alyss' tabindex="0" class="hidden"/>
-                <label>alyss</label>
-            </div>
-        </div>
-        <div class="field">
-            <div class="ui radio checkbox">
-                <input type="radio" name="speaker" value='omazh' tabindex="0" class="hidden"/>
-                <label>omazh</label>
-            </div>
-        </div>
-        <div class="field">
-            <div class="ui radio checkbox">
-                <input type="radio" name="speaker" value='zahar' tabindex="0" class="hidden"/>
-                <label>zahar</label>
-            </div>
-        </div>
-        <div class="field">
-            <div class="ui radio checkbox">
-                <input type="radio" name="speaker" value='ermil' tabindex="0" class="hidden"/>
-                <label>ermil</label>
-            </div>
-        </div>
+
     </div>
-   <!-- выбор голоса /-->
 
-    <br>
-    <input type="radio" name="emotion" value="neutral"> neutral<Br>
-    <input type="radio" name="emotion" value="good"> good<Br>
-    <input type="radio" name="emotion" value="evil"> evil<Br>
-    <br>
-    <input type="radio" name="method" value="google"> google<Br>
-    <div class="ui submit button">Submit</div>
-
-</div>
+    <div class="result">-</div>
 
 
-<div class="result">-</div>
-
-
-<script>
-$('.ui.radio.checkbox').checkbox();
-</script>
-<script>
+    <script>
     // спасибо коллективному разуму: http://ru.stackoverflow.com/questions/261113/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%B5%D0%B9%D1%88%D0%B5%D0%B5-ajax-%D0%BF%D1%80%D0%B8%D0%BB%D0%BE%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5
     // Дожидаемся когда будет готов DOM
     $(function() {
+        $('.ui.radio.checkbox').checkbox();
         // Помещаем в переменную jQuery обьект с формой (найденой по id)
+
+        var $google = $('.ui.slider.checkbox.google');
+        $google.on('change', function() {
+            $('.grouped.fields.speaker').hide("slow");
+            $('.grouped.fields.emotion').hide("slow"); });
+        var $yandex = $('#yandex');
+        $yandex.on('change', function() {
+            $('.grouped.fields.speaker').show(1000);
+            $('.grouped.fields.emotion').show(1000); });
+
         var $form = $('#form');
         var $submit = $('.ui.submit.button');
         $submit.on('click', function() {
-            console.log($form.find('[name=speaker]:checked'));
-            console.log($form.form('get values', ['text', 'method', 'speaker', 'emotion']));
             // Делаем POST запрос средствами jQuery
-            $.post('http://localhost:28999/', {
+            $.post('http://localhost:28999/',
                 // массив параметров, которые хотим передать в POST
-                text: $form.find('[name=text]').val(),// Значение инпута, найденного в форме по атрибуту name
-                method: $form.find('[name=method]:checked').val(),
-                speaker: $form.find('[name=speaker]:checked').val(),
-                emotion: $form.find('[name=emotion]:checked').val()
-
-            }, function(response) {
+                $form.form('get values', ['text', 'method', 'speaker', 'emotion'])
+                , function(response) {
                 // Если сервер ответит со статусом 200 то выполнится эта функция
                 // и в переменной response придет ответ сервера. Если сервер ответит
                 // с content-type  'text/plain' то в переменной будет ответ одной
@@ -105,7 +153,7 @@ $('.ui.radio.checkbox').checkbox();
                 // виде массива javascript
 
                 // Показываем результат в div с классом result
-                $('.result').html(response);
+                $('.result').html(response);  // debug
             });
             // Запрещаем браузеру делать то что он сам хочет делает при сабмите формы.
             return false;
@@ -113,7 +161,10 @@ $('.ui.radio.checkbox').checkbox();
     });
 
 
-</script>
+
+
+
+    </script>
 
 </body>
 </html>

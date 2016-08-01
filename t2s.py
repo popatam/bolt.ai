@@ -10,7 +10,7 @@ RASPBERRY = 0
 class Text2Speech:
     def __init__(self):
         with open('key', 'rb') as fd:
-            self.key = str(fd.read().decode('utf-8'))
+            self.key = str(fd.read().decode('utf-8')).strip()
         self.path = 'speech_cache/'
         self.speech_pickle_file = ''.join([self.path, 'speech_pickle'])
 
@@ -100,6 +100,7 @@ class Text2Speech:
             'speed': speed
         }
         r = requests.get('https://tts.voicetech.yandex.net/generate', params=params)
+        print(params)
 
         mp3filename = ''.join([self.path, str(dt.now().timestamp()), '.mp3'])
 
